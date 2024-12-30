@@ -1,0 +1,21 @@
+{
+  "name": "Antipilot",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "A chrome extension to attempt and remove the github copilot related UI on github.com",
+  "content_scripts": [
+    {
+      "js": ["scripts/anticopilot.content.js"],
+      "matches": [
+        "https://github.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/antipilot-16.png",
+    "48": "icons/antipilot-48.png",
+    "128": "icons/antipilot-128.png",
+    "256": "icons/antipilot-256.png"
+    
+  }
+}
