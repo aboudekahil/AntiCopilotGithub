@@ -130,6 +130,14 @@ const combos = [
 ]
 
 function runAntiCopilotGithub() {
+    window.addEventListener("", function() {})
+
+    const codeFasterElement = document.querySelector("#\\:R3kptal9lab\\: > span > span.prc-Button-Label-pTQ3x");
+
+    if (codeFasterElement) {
+        codeFasterElement.closest("div")?.remove();
+    }
+
     const customTaggedElement = document.getElementsByTagName("copilot-dashboard-entrypoint")[0];
     customTaggedElement?.remove();
 
@@ -142,4 +150,21 @@ function runAntiCopilotGithub() {
     });
 }
 
-window.onload = runAntiCopilotGithub;
+let oldHref = document.location.href;
+
+window.onload = function () {
+    const bodyList = document.querySelector("body");
+    const observer = new MutationObserver(function (mutations) {
+        if (oldHref !== document.location.href) {
+            oldHref = document.location.href;
+            runAntiCopilotGithub();
+        }
+    })
+    const config = {
+        childList: true,
+        subtree: true,
+    }
+
+    observer.observe(bodyList, config);
+    runAntiCopilotGithub();
+}
