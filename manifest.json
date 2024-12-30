@@ -8,7 +8,8 @@
       "js": ["scripts/anticopilot.content.js"],
       "matches": [
         "https://github.com/*"
-      ]
+      ],
+      "run_at": "document_start"
     }
   ],
   "icons": {
@@ -16,6 +17,5 @@
     "48": "icons/antipilot-48.png",
     "128": "icons/antipilot-128.png",
     "256": "icons/antipilot-256.png"
-
   }
 }

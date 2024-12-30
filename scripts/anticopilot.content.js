@@ -130,10 +130,10 @@ const combos = [
 ]
 
 function runAntiCopilotGithub() {
-    const toRemove = document.getElementsByTagName("copilot-dashboard-entrypoint")[0];
-    toRemove?.remove();
+    const customTaggedElement = document.getElementsByTagName("copilot-dashboard-entrypoint")[0];
+    customTaggedElement?.remove();
 
-    const elementsToRemove = [toRemove];
+    const elementsToRemove = [customTaggedElement];
     for (let copilotCombo of combos) {
         elementsToRemove.push(...document.querySelectorAll(`div[class*=${copilotCombo}]`));
     }
